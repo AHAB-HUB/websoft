@@ -7,10 +7,8 @@ body {
   background-image: url("https://unsplash.com/photos/jR4Zf-riEjI/download?force=true");
   background-size: cover;
   background-attachment:fixed;
+  height:100%;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 3;
 }
 
 *{
