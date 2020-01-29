@@ -1,4 +1,3 @@
-
 html {
     overflow-y: scroll;
     height: 100%;
@@ -8,7 +7,10 @@ body {
   background-image: url("https://unsplash.com/photos/jR4Zf-riEjI/download?force=true");
   background-size: cover;
   background-attachment:fixed;
-    margin: 0 auto;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 3;
 }
 
 *{
@@ -16,27 +18,29 @@ body {
 }
 
 .header{
-  position: -webkit-sticky;
- position: sticky;
- top: 0;
-  text-align: center;
-  background: #1abc9c;
+  display: flex;
+  position: sticky;
+  z-index: 1;
+  top: 0;
+  height: 50px;
+  background: black;
   font-size: 15px;
-  opacity: 100%;
+}
+
+.div:hover{
+  background-color: silver;
 }
 
 .title{
   margin: 0 auto;
   width: 700px;
-  max-height: 100%;
-  height: -175px;
+  max-height: 200%;
   background: rgb(128, 128, 128, .5);
   font-size: 20px;
   display: flex;
   flex-direction: column;
   flex-grow: 3;
 }
-
 
 .image-container{
   display:flex;
@@ -75,15 +79,16 @@ body {
 }
 
 .footer{
-  position: -webkit-sticky;
-  position: sticky;
-
-   bottom: 0;
-   left: 0;
-
+  position: fixed;
+  bottom: 0;
+  left: 0;
   padding-left: 30px;
-  padding-top: 30px;
-  height: 190px;
-  background: rgb(128, 128, 128, .5);
+  padding-top: 10px;
+  background-image: linear-gradient(rgb(128, 128, 128, .1) , gray);
   width: 100%;
+  z-index: 1;
+}
+
+.footer-icon:hover{
+  opacity: .8;
 }
