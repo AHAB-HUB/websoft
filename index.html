@@ -11,9 +11,11 @@
   <body>
 
     <header class  = "header">
-            <div onclick="window.location='work/report/me.html';" style ="color:white;padding:15px;cursor:default;" class = "div">Me</div>
-            <div onclick="window.location='work/report/report.html';" style ="color:white;padding:15px;cursor:default;" class = "div">Report</div>
-            <div onclick="window.location='work/report/about.html';" style ="color:white;padding:15px;cursor:default;" class = "div">About</div>
+      <div onclick="window.location='index.html';" style ="color:white;padding:15px;cursor:default;" class = "div">Home</div>
+      <div onclick="window.location='work/report/me.html';" style ="color:white;padding:15px;cursor:default;" class = "div">Me</div>
+      <div onclick="window.location='work/report/report.html';" style ="color:white;padding:15px;cursor:default;" class = "div">Report</div>
+      <div onclick="window.location='work/report/schools.html';" style ="color:white;padding:15px;cursor:default;" class = "div">Schools in Sweden</div>
+      <div onclick="window.location='work/report/about.html';" style ="color:white;padding:15px;cursor:default;" class = "div">About</div>
 
     </header>
 
@@ -21,6 +23,25 @@
       <div style ="color:white; font-size:45px;padding-top:30px">Ahmad Abdulal</div>
       <div style ="color:white; font-size:45px;padding-top:10px;padding-bottom:30px">A student in Kristianstad Universtiy</div>
       </div>
+
+      <script src="work/report/js/duck.js"></script>
+      <div id="scoreHolder" class="text-container" style="display:flex;visibility:hidden;width:100px;position:fixed;right:10px;bottom:170px;margin:0;border-radius:50px">
+        <div>Points:</div>
+        <div id="points" style="padding-left:5px">0</div>
+      </div>
+
+      <div class ="tooltip" id="startLogo">
+        <span class="tooltiptext" style = "right:8px;bottom:170px;">Press to start</span>
+        <img src="work/report/img/duck-logo.jpg" class ="image-duck" onclick="startGame()" alt="Duck-logo">
+      </div>
+
+      <div class ="tooltip" id="exit" style="visibility:hidden; background-color:red;">
+        <span class="tooltiptext" style="height:3 0px;width:170px;display:fixed;right:91px;bottom:115px;"> Press to Exit the game</span>
+        <img src="work/report/img/stop.png" onclick="reset()" alt="hi" class ="image-duck" >
+      </div>
+
+      <img src="work/report/img/duck.png" id ="duck" style="bottom:200px;height:100px;width:100px;visibility:hidden" alt="hi" >
+
     <footer class ="footer">
     <div>
       <a class="footer-icon" href="https://www.facebook.com/"><img><img src="work/report/img/facebook.png" style = "width:50px;" alt="facebook link"></a>

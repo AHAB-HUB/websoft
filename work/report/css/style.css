@@ -40,6 +40,13 @@ body {
   flex-grow: 3;
 }
 
+.table tr:nth-child(even){
+  background: #f1f1f1;
+}
+.table tr:hover{
+  background: lightgray;
+}
+
 .image-container{
   display:flex;
   margin:  30px 30px;
@@ -54,6 +61,16 @@ body {
   object-fit:cover;
   border-radius: 50%;
   transform: rotate(90deg);
+}
+
+.image-duck{
+  position: absolute;
+  right:20px;
+  bottom: 90px;
+  height: 70px;
+  width: 70px;
+  position: fixed;
+  border-radius: 50%;
 }
 
 .image-container-text{
@@ -77,6 +94,7 @@ body {
 }
 
 .footer{
+  display: flex;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -87,6 +105,34 @@ body {
   z-index: 1;
 }
 
-.footer-icon:hover{
+.image-duck:hover,.footer-icon:hover{
   opacity: .8;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: fixed;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+.tooltip .tooltiptext::after {
+  content: " ";
+  position: absolute;
+  top: 100%; /* At the bottom of the tooltip */
+  left: 60%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
 }
