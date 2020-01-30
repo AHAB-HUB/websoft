@@ -1,15 +1,14 @@
+
 function getMunicipalities() {
 
   const proxyUrl = "https://cors-anywhere.herokuapp.com/";
   const url = "https://api.scb.se/UF0109/v2/skolenhetsregister/sv/kommun";
-
 
   fetch(proxyUrl + url)
     .then((response) => {
       return response.json();
     })
     .then((myJson) => {
-
           var jsonKommuner = myJson.Kommuner;
           var counter = jsonKommuner.length;
           list = document.getElementById('select-element');
@@ -21,7 +20,6 @@ function getMunicipalities() {
     };
 
   function getSchools(municipalityNr) {
-
     const proxyUrl = "https://cors-anywhere.herokuapp.com/";
     const url = "https://api.scb.se/UF0109/v2/skolenhetsregister/sv/kommun/" + municipalityNr;
 
@@ -35,7 +33,6 @@ function getMunicipalities() {
         var table = "<tr><th>Municipality code</th><th>Pe.Org.Nr</th><th>School code</th><th>School name</th></tr>";
 
         for (i = 0; i < counter; i++) {
-
           table +=
             "<tr><td>" +
             jsonSchool[i].Kommunkod +
@@ -45,10 +42,8 @@ function getMunicipalities() {
             jsonSchool[i].Skolenhetskod +
             "</td><td>" +
             jsonSchool[i].Skolenhetsnamn;
-
           "</td></tr>";
         }
-
         document.getElementById("table").innerHTML = table;
       });
   }

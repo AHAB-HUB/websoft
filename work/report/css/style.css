@@ -1,13 +1,14 @@
+
 html {
     overflow-y: scroll;
-    height: 100%;
+    background-image: url("https://unsplash.com/photos/jR4Zf-riEjI/download?force=true");
+    background-size: cover;
+    background-attachment:fixed;
 }
 
 body {
-  background-image: url("https://unsplash.com/photos/jR4Zf-riEjI/download?force=true");
-  background-size: cover;
-  background-attachment:fixed;
-  height:100%;
+
+
   margin: 0 auto;
 }
 
@@ -32,7 +33,7 @@ body {
 .title{
   margin: 0 auto;
   width: 700px;
-  max-height: 200%;
+
   background: rgb(128, 128, 128, .5);
   font-size: 20px;
   display: flex;
@@ -135,4 +136,28 @@ body {
   border-width: 5px;
   border-style: solid;
   border-color: black transparent transparent transparent;
+}
+
+#flag {
+  opacity: 0;
+  margin-top:100px;
+  position: fixed;
+  background-color: white;
+  display:flex;
+  width:300px;
+  height:200px;
+  transition: all 500ms linear;
+}
+
+.flag-button{
+  cursor:default;
+  padding:20px;
+  background-color:black;
+  color:white;
+  border-radius: 20px;
+}
+
+.flag-button:hover{
+  background-color: silver;
+  color:black;
 }
