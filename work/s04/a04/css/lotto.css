@@ -22,3 +22,7 @@
 .input[type=number] {
   -moz-appearance:textfield;
 }
+
+.showButton:hover{
+  opacity: 0.8;
+}

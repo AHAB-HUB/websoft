@@ -1,4 +1,4 @@
-function randomDrow(){
+function randomDrow() {
   return Math.floor(Math.random() * 35) + 1;
 }
 
@@ -11,29 +11,32 @@ var val6 = randomDrow();
 var val7 = randomDrow();
 
 var lotteryArr;
+
 function newRnd(){
   lotteryArr = Array(val1, val2, val3, val4, val5, val6, val7);
 }
 newRnd();
 
-function NewLottery(){
-    var lotteryValues = document.getElementById("lotteryValues");
-    var childNodes = lotteryValues.childNodes;
-    var c = 0;
 
-    for (var i = 2; i < childNodes.length - 2; i++) {
+function NewLottery() {
+  var lotteryValues = document.getElementById("lotteryValues");
+  var childNodes = lotteryValues.childNodes;
+  var c = 0;
 
-      if (i%2 == 1){
-        childNodes[i].style.transition = "all 100ms";
-        childNodes[i].innerHTML = lotteryArr[c];
-        c++;
-      }
+  for (var i = 2; i < childNodes.length - 2; i++) {
+
+    if (i % 2 == 1) {
+      childNodes[i].style.transition = "all 100ms";
+      childNodes[i].innerHTML = lotteryArr[c];
+      c++;
     }
+  }
+  updateColor();
 }
 
 var isShown = new Boolean(false);
 
-function showButton(){
+function showButton() {
   console.log("click");
   var lotteryValues = document.getElementById("lotteryValues");
   var childNodes = lotteryValues.childNodes;
@@ -41,50 +44,49 @@ function showButton(){
 
   for (var i = 2; i < childNodes.length - 2; i++) {
 
-    if (i%2 == 1){
+    if (i % 2 == 1) {
 
-      if(isShown){
+      if (isShown) {
         childNodes[i].style.color = "white";
-      }else{
+      } else {
         childNodes[i].style.color = "black";
       }
     }
   }
 }
 
-function updateColor(){
+function updateColor() {
+  console.log("qweqwe");
   var lotteryValues = document.getElementById("lotteryValues");
   var childNodes = lotteryValues.childNodes;
   var userValues = document.getElementById("userList");
   var userNodes = userValues.childNodes;
+  var total = 0;
 
   for (var i = 2; i < childNodes.length - 2; i++) {
 
-      if (i%2 ==1) {
-        console.log(userNodes[i].textContent + " " + childNodes[i].textContent );
-                if (childNodes[i].textContent  == userNodes[i].textContent) {
-                    userNodes[i].style.background = '#98FB98';
-                }else{
-                  if (userNodes[i].textContent == ""|| userNodes[i].textContent ==  null) {
-                    userNodes[i].style.background = 'white';
-                    return;
-                  }else{
-                    userNodes[i].style.background = '#FF6961';
-
-                  }
-                }
-
+    if (i % 2 == 1) {
+      if (childNodes[i].textContent == userNodes[i].value) {
+        userNodes[i].style.background = '#98FB98';
+        total++;
+      } else {
+        if (userNodes[i].value.trim() == '') {
+          userNodes[i].style.background = 'white';
+        } else {
+          userNodes[i].style.background = '#FF6961';
+        }
       }
-
+    }
   }
-
+  updateScore(total);
 }
 
-
-
-
+function updateScore(total = 0) {
+  var counter = document.getElementById("counter");
+  counter.innerHTML = "Score: " + total;
+}
 
 module.exports.lotteryArr = lotteryArr;
-module.exports.rnd = function(){
-  return [randomDrow(),randomDrow(),randomDrow(),randomDrow(),randomDrow(),randomDrow(),randomDrow()];
+module.exports.rnd = function() {
+  return [randomDrow(), randomDrow(), randomDrow(), randomDrow(), randomDrow(), randomDrow(), randomDrow()];
 };
