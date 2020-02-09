@@ -9,14 +9,8 @@
 </head>
 
 <body>
-  <header class="header">
-    <div onclick="window.location='../../index.html';" style="color:white;padding:15px;cursor:default;" class="div">Home</div>
-    <div onclick="window.location='me.html';" style="color:white;padding:15px;cursor:default;" class="div">Me</div>
-    <div onclick="window.location='report.html';" style="color:white;padding:15px;cursor:default;" class="div">Report</div>
-    <div onclick="window.location='schools.html';" style="color:white;padding:15px;cursor:default;" class="div">Schools in Sweden</div>
-    <div onclick="window.location='flag.html';" style="color:white;padding:15px;cursor:default;" class="div">Flags</div>
-    <div onclick="window.location='about.html';" style="color:white;padding:15px;cursor:default;" class="div">About</div>
-  </header>
+
+ <?php include "./view/header.php"; ?>
 
   <article class="title">
 
@@ -91,7 +85,7 @@
       <div style="padding-top:10px">4) What grade did you aim for and was it a difficult level?</div>
       <div>Grade 5. It was challenging and difficult because it is still new to me and the instructions were not so clear at some point.</div>
       <div style="padding-top:10px">5) What is your TIL for this course section?</div>
-      <div>I improved my experience HTML more and I got to use new elements with no errors. I learned about nodeJS and npm and some other libraries/packages that made the ide more organized.</div>
+      <div>I improved my experience more and I got to use new elements with no errors. I learned about nodeJS and npm and some other libraries/packages that made the ide look more organized.</div>
     </section>
 
     <section class="text-container">
@@ -139,33 +133,8 @@
 
   </article>
 
-  <script src="js/duck.js"></script>
-  <div id="scoreHolder" class="text-container" style="display:flex;visibility:hidden;width:100px;position:fixed;right:10px;bottom:170px;margin:0;border-radius:50px">
-    <div>Points:</div>
-    <div id="points" style="padding-left:5px">0</div>
-  </div>
-
-  <div class="tooltip" id="startLogo">
-    <span class="tooltiptext" style="right:8px;bottom:170px;">Press to start</span>
-    <img src="img/duck-logo.jpg" class="image-duck" onclick="startGame()" alt="Duck-logo">
-  </div>
-
-  <div class="tooltip" id="exit" style="visibility:hidden; background-color:red;">
-    <span class="tooltiptext" style="height:3 0px;width:170px;display:fixed;right:91px;bottom:115px;"> Press to Exit the game</span>
-    <img src="img/stop.png" onclick="reset()" alt="hi" class="image-duck">
-  </div>
-
-  <img src="img/duck.png" id="duck" style="position:fixed;top:30px;height:100px;width:100px;visibility:hidden" alt="hi">
-
-  <footer class="footer">
-    <div>
-      <a class="footer-icon" href="https://www.facebook.com/"><img><img src="img/facebook.png" style="width:50px;" alt="facebook link"></a>
-      <a class="footer-icon" href="https://www.instagram.com"><img><img src="img/insta.png" style="width:50px;" alt="Instagram link"></a>
-      <a class="footer-icon" href="https://www.google.se"> <img><img src="img/google.png" style="width:50px;" alt="Google link"></a>
-      <a class="footer-icon" href="https://www.twitter.com"> <img><img src="img/twitter.png" style="width:50px;" alt="Twitter link"></a>
-
-    </div>
-  </footer>
+<?php include "./view/duck.php"; ?>
+<?php include "./view/footer.php"; ?>
 
 </body>
 

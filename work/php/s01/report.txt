@@ -1,0 +1,16 @@
+1)Did you before know about the techniques Git, GitHub, Markdown and/or GitHub Pages?
+I did use git and github before in the previous project courses we had at school. 
+However, Markdown and GitHub Pages are new to me. 
+
+2)Have you ever created websites before?
+No, but I have created some small pages using HTML to print a text.
+
+3)Briefly explain your experience and knowledge of web application development.
+I don’t have any previous experience regard web application development.
+However, I know some of the famous frameworks that are used in development.
+
+4)What is your TIL for this course section?
+I got to learn about new techniques such as GitHub pages and markdown. I learned how to keep the forked repository up to date.
+In addition to how to add/remove tags and their usefulness.
+I learned that when I clone a forked repository locally by GitHub desktop application,
+ the application will automatically add the master remote under the name "upstream".
