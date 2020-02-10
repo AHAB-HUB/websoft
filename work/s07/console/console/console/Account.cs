@@ -1,11 +1,10 @@
-﻿using System.Collections.Generic;
-using System.Text.Json;
+﻿using System.Text.Json;
 
 namespace console
 {
     class Account
     {
-        public Account(int  number, int balance, string label, int owner)
+        public Account(int number, int balance, string label, int owner)
         {
             this.Number = number;
             this.Balance = balance;
@@ -13,7 +12,7 @@ namespace console
             this.Owner = owner;
         }
 
-        public Account() {}
+        public Account() { }
 
         public int Number { get; set; }
         public int Balance { get; set; }

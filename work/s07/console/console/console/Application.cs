@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Text.Json;
 using System.Linq;
+using System.Text.Json;
 
 namespace console
 {
@@ -18,7 +18,6 @@ namespace console
 
         public void Run()
         {
-            Console.WriteLine("Hello World!");
             char ans = 'g';
             var accounts = ReadAccounts();
 
@@ -213,10 +212,10 @@ namespace console
 
             if (!isAcc1)
             {
-                Console.WriteLine("Could not find and account with the number" + acc1);
+                Console.WriteLine("Could not find an account with the number " + acc1);
             }
             else if (!isAcc2)
-                Console.WriteLine("Could not find and account with the number" + acc2);
+                Console.WriteLine("Could not find an account with the number " + acc2);
 
             if (isAcc1 && isAcc2)
                 SaveAccounts(accounts);
@@ -228,8 +227,8 @@ namespace console
             string label;
             Console.WriteLine("-------------------");
             Console.WriteLine("New Account details");
-           
-            while (true) 
+
+            while (true)
             {
                 try
                 {
@@ -309,8 +308,10 @@ namespace console
         {
             String file = @"..\..\..\..\..\..\data\account.json";
 
+            File.Delete(file);
             using (var outputStream = File.OpenWrite(file))
             {
+
                 JsonSerializer.Serialize<IEnumerable<Account>>(
                     new Utf8JsonWriter(
                         outputStream,
