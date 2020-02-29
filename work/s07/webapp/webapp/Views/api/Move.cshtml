@@ -1,0 +1,57 @@
+﻿@{
+    ViewData["Title"] = "Move";
+    var account = ViewData["account"];
+}
+
+    <div class="text-center">
+        <table class="table">
+            <tr class="thead-dark">
+                <th></th>
+                <th>account details</th>
+            </tr>
+            <tr>
+                <th>Number</th>
+                <th></th>
+            </tr>
+            <tr>
+                <th  class="thead-dark">Balance</th>
+                <th></th>
+            </tr>
+            <tr>
+                <th class="thead-dark">Label</th>
+                <th></th>
+            </tr>
+            <tr>
+                <th class="thead-dark">Owner</th>
+                <th></th>
+            </tr>
+            <tr>
+                <th class="thead-dark"><button onclick="onlcick()" id="button">Move to</button></th>
+                <th><div><input id="input_id" onkeyup="hideAlert()" style="width:100%" type="number" autocomplete="off" placeholder="account number"><p id="p" style="color:red;">Account does not exist!</p></div></th>
+            </tr>
+        </table>
+
+        <p>@account</p>
+    </div>
+
+    <script>
+
+        var textbox = document.getElementById("input_id");
+        var button = document.getElementById("button");
+        bool hide = false;
+         
+        function onlcick() {
+
+            button.Text = "...button clicked...";
+            button.Enabled = false;
+
+            if (textbox.Text == 0) {
+                hide = true;
+            }
+
+        };
+
+        function hideAlert() {
+            hide = false;
+        };
+    </script>

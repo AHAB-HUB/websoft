@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    var json = new JsonReader().Read();
+}
+<div class="text-center">
+
+    @{if (json != null)
+        {
+            <table class="table">
+                <tr class="thead-dark">
+                    <th >Number</th>
+                    <th >Balance</th>
+                    <th>Label</th>
+                    <th >Owner</th>
+                </tr>
+
+                @foreach (var a in json)
+                {
+                    <tr>
+                        <th>@(a.Number)</th>
+                        <th>@(a.Balance)</th>
+                        <th >@(a.Label)</th>
+                        <th >@(a.Owner)</th>
+                    </tr>
+                }
+            </table>
+        }
+        else
+        {
+            <p class="display-4">
+                An error occured while fetching data form database
+            </p>
+        }
+    }
+</div>
