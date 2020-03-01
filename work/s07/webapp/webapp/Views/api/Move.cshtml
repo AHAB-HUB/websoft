@@ -1,9 +1,11 @@
 ﻿@{
     ViewData["Title"] = "Move";
-    var account = ViewData["account"];
+    int dir = Convert.ToInt32(ViewData["direction"]);
+    Account acc = new JsonReader().Read().ToArray()[dir];
 }
 
     <div class="text-center">
+        <h1>@ViewData["Title"]</h1>
         <table class="table">
             <tr class="thead-dark">
                 <th></th>
@@ -11,47 +13,35 @@
             </tr>
             <tr>
                 <th>Number</th>
-                <th></th>
+                <th>@acc.Number</th>
             </tr>
             <tr>
-                <th  class="thead-dark">Balance</th>
-                <th></th>
+                <th class="thead-dark">Balance</th>
+                <th>@acc.Balance</th>
             </tr>
             <tr>
                 <th class="thead-dark">Label</th>
-                <th></th>
+                <th>@acc.Label</th>
             </tr>
             <tr>
                 <th class="thead-dark">Owner</th>
-                <th></th>
+                <th>@acc.Owner</th>
             </tr>
             <tr>
-                <th class="thead-dark"><button onclick="onlcick()" id="button">Move to</button></th>
-                <th><div><input id="input_id" onkeyup="hideAlert()" style="width:100%" type="number" autocomplete="off" placeholder="account number"><p id="p" style="color:red;">Account does not exist!</p></div></th>
+                <th>
+                    <form method="POST" asp-controller="api" asp-action="Move" asp-route-direction=@(dir - 1)>
+                        <button type="submit" class="btn btn-secondary btn-sm">Back</button>
+                    </form>
+                </th>
+                <th>
+                    <form method="POST" asp-controller="api" asp-action="Move" asp-route-direction=@(dir + 1)>
+                        <button type="submit" class="btn btn-secondary btn-sm">Next</button>
+                    </form>
+                </th>
             </tr>
         </table>
 
-        <p>@account</p>
     </div>
 
-    <script>
 
-        var textbox = document.getElementById("input_id");
-        var button = document.getElementById("button");
-        bool hide = false;
-         
-        function onlcick() {
-
-            button.Text = "...button clicked...";
-            button.Enabled = false;
-
-            if (textbox.Text == 0) {
-                hide = true;
-            }
-
-        };
-
-        function hideAlert() {
-            hide = false;
-        };
-    </script>
+  

@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using System;
 using System.Diagnostics;
 using webapp.Models;
+using System.Linq;
 
 namespace webapp.Controllers
 {
@@ -31,20 +31,22 @@ namespace webapp.Controllers
             }
         }
 
-        [HttpGet("move")]
-        [HttpPost("move/{Account?}")]
-        public IActionResult Move(Account Account)
+        [HttpPost("move/{direction?}")]
+        [HttpGet("move/{*any}")]
+        public IActionResult Move(int direction = 0)
         {
-            ViewData["account"] = new JsonReader().Read(42);
-            if (Account == null)
+            if (direction < 0)
             {
-                return View();
+                Response.Redirect("0");
+                direction = 0;
             }
-            else
-            {
-                ViewData["account"] = Account;
-                return View();
-            }
+                
+            if (direction >= new JsonReader().Read().Count())
+                direction = new JsonReader().Read().Count() - 1;
+
+            ViewData["direction"] = direction;
+
+            return View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

@@ -306,7 +306,7 @@ namespace console
         }
         private void SaveAccounts(IEnumerable<Account> accounts)
         {
-            String file = @"..\..\..\..\..\..\data\account.json";
+            String file = @"../../../../../../data/account.json";
 
             File.Delete(file);
             using (var outputStream = File.OpenWrite(file))
