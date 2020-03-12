@@ -49,6 +49,17 @@ namespace webapp.Controllers
             return View();
         }
 
+        [HttpPut("api/transfer/{sourceNumber}/{destinationNumber}/{amount}")]
+        public IActionResult Transfer(int sourceNumber, int destinationNumber, int amount)
+        {
+            if (new JsonWriter().TransferMoney(sourceNumber, destinationNumber, amount))
+            {
+                return Ok("OK");
+            }
+
+            return NotFound(new { Error = "Transfer failed, check account numbers and balance!" });
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
