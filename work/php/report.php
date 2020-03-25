@@ -198,11 +198,34 @@
         <p>I didn’t know about OWASP top-10 before but learning how to write an efficient code against these security vulnerabilities has always been of my interest. I had a brief knowledge them, and I got to learn more about them and some other issues I didn’t think of before.</p>
       </section>
 
-    <section class="text-container">
+  <section class="text-container" style="margin-bottom:150px">
       <h2>S10</h2>
-      <div style="width:100%;height:1.5px;background-color:black"></div>
-      <p>Here is the text for this section.</p>
-    </section>
+      <div style="width:100%;height:1.5px;background-color:black;padding-top:0"></div>
+      <p><b style="font-size:30px">Pinder</b></p>
+	  <p>Pinder is a web application that helps pet owners to view and share their pets with others. In this application, users have the capability of creating an account to log in and make use of the site features. When logged in, the user can view his profile page where he can see his account credentials and his pets if he has any. If not, he can add more pets to his account through the profile page. Pets can have more than one picture on their profile so others can view them when searching for other pets.</p>
+      <p>Users can search for other pets when logged in. Search page gives the ability to filter the search by the text that is entered in the search box. For instance, if ‘cat’ is entered, the user will get all pets that are cats.</p>
+	  <p>Users can show their interest in other pets by pressing the empty heart icon. That will give them the option to leave a comment for that pet if they want to. Received comment are viewed in the profile page right below each pet profile.</p>
+	  <p><b style="font-size:30px">Project technicalities</b></p>
+	  <p>Technologies used in this project are:</p>
+	   <ul type="circle">
+        <li>Node-JS</li>
+        <li>React-JS</li>
+        <li>MariaDB</li>
+        <li>Tachyons-CSS</li>
+		<li>XAMPP</li>
+      </ul>
+	  
+	  <p>The work was divided between us three. However, we have no previous experience of how the work should adequately be distributed. So, since the application consists of three web pages, we decided to take one each. I worked on the profile page, Nawar made the log-in page Nuno took over the search page.</p>
+	  <p>We had a physical meeting each week, so we vision the new updates and work together on the database. In the second week, we completed the database diagram and started working from there on the rest of the application.</p>
+	  <p>The application overall was difficult since it is our first time to make a complete web-application. We started y watching tutorial s on how to use react and how to use specific commands in JS.</p>
+	  <p>The work process went smooth until we reached the last week and had to put everything together. Here we faced some difficulties combining all pages into one working project. We had to change the log-in authentication in the application to prevent functionalities of being exploited by none authorized users.</p>
+	  <p>About this Couse</p>
+	  <p>The course covers many technologies that are used in web development today. However, the time is limited and not enough to cover all of them. Also, this course has six practical assignments to test student knowledge. It would have been better if there was an exercise session to practice how the code should be written so the students can have an example of what they are supposed to do. It would clear the confusion that may occur during the assignments.</p>
+	  <p><b style="font-size:30px">TIL</b></p>
+	  <p>This course gave me everything I need to know if I wish to be web- developer. I learned about both front and back end fields. I got to test and implement new functionalities I wasn’t capable of before. </p>
+
+
+	</section>
 
   </article>
 
